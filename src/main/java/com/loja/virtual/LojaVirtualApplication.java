@@ -1,4 +1,4 @@
-package com.loja.virtal;
+package com.loja.virtual;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
