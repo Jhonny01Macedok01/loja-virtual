@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "forma_pagamento")
 @SequenceGenerator(name = "seq_forma_pagamento", sequenceName = "seq_forma_pagamento", allocationSize = 1, initialValue = 1)
-public class Forma_Pagamento implements Serializable {
+public class FormaPagamento implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -51,7 +51,7 @@ public class Forma_Pagamento implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Forma_Pagamento other = (Forma_Pagamento) obj;
+		FormaPagamento other = (FormaPagamento) obj;
 		return Objects.equals(id, other.id);
 	}
 
