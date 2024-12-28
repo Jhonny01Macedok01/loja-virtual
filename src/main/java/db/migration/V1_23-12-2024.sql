@@ -17,3 +17,7 @@ WHERE table_name = 'vd_cp_loja_virt';
 
 ALTER TABLE public.vd_cp_loja_virt 
 DROP CONSTRAINT ukhkxjejv08kldx994j4serhrbu;
+
+
+ALTER TABLE public.vd_cp_loja_virt
+DROP CONSTRAINT ukhkxjejv08kldx994j4serhrbu;

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Objects;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -29,9 +30,14 @@ public abstract class Pessoa implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_pessoa")
 	private Long id;
 	
+	@Column(nullable = false)
 	private String nome;
+	
+	@Column(nullable = false)
 	private String emial;
-	private String tel;
+	
+	@Column(nullable = false)
+	private String telefone;
 	
 	@OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Endereco> enderecos = new ArrayList<Endereco>();
@@ -63,10 +69,10 @@ public abstract class Pessoa implements Serializable {
 		this.emial = emial;
 	}
 	public String getTel() {
-		return tel;
+		return telefone;
 	}
 	public void setTel(String tel) {
-		this.tel = tel;
+		this.telefone = tel;
 	}
 	@Override
 	public int hashCode() {
