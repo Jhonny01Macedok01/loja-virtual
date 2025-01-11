@@ -19,8 +19,9 @@ public class WebConfigSecurity implements HttpSessionListener {
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.GET, "/salvarAcesso", "deleteAcesso").permitAll()
-                .requestMatchers(HttpMethod.POST, "/salvarAcesso", "deleteAcesso").permitAll()
+                .requestMatchers(HttpMethod.GET, "/salvarAcesso", "/deleteAcesso").permitAll()
+                .requestMatchers(HttpMethod.POST, "/salvarAcesso", "/deleteAcesso").permitAll()
+                .requestMatchers(HttpMethod.DELETE, "/deleteAcesso").permitAll()
                 .anyRequest().authenticated()
             )
             .csrf(csrf -> csrf.disable()); // Desabilita CSRF se necessário
