@@ -2,12 +2,11 @@ package com.loja.virtual;
 
 import java.util.List;
 
-import javax.swing.Spring;
-
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -27,6 +26,7 @@ import com.loja.virtual.repository.AcessoRepository;
 import junit.framework.TestCase;
 
 @RunWith(SpringRunner.class)
+/*@Profile("test")*/
 @SpringBootTest(classes = LojaVirtualApplication.class)
 public class LojaVirtualApplicationTests extends TestCase {
 	
@@ -78,10 +78,10 @@ public class LojaVirtualApplicationTests extends TestCase {
 		MockMvc mockMvc = builder.build();
 		
 		Acesso acesso = new Acesso();
-		
 		acesso.setDescricao("ROLE_TESTE_DELETE");
-		
+
 		acesso = acessoRepository.save(acesso);
+
 		
 		ObjectMapper objectMapper = new ObjectMapper();
 		
