@@ -2,21 +2,22 @@ package com.loja.virtual.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.Objects;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.ConstraintMode;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ForeignKey;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.SequenceGenerator;
-import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import javax.persistence.Column;
+import javax.persistence.ConstraintMode;
+import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "nota_fiscal_compra")
@@ -46,7 +47,7 @@ public class NotaFiscalCompra implements Serializable{
 	
 	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
-	private BigDecimal dataCompra;
+	private Date dataCompra;
 	
 	@ManyToOne(targetEntity = Pessoa.class)
 	@JoinColumn(name = "pessoa_id", nullable = false,
@@ -114,11 +115,11 @@ public class NotaFiscalCompra implements Serializable{
 		this.valorICMS = valorICMS;
 	}
 
-	public BigDecimal getDataCompra() {
+	public Date getDataCompra() {
 		return dataCompra;
 	}
 
-	public void setDataCompra(BigDecimal dataCompra) {
+	public void setDataCompra(Date dataCompra) {
 		this.dataCompra = dataCompra;
 	}
 
