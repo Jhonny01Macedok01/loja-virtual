@@ -25,7 +25,7 @@ import com.loja.virtual.repository.AcessoRepository;
 
 import junit.framework.TestCase;
 
-@RunWith(SpringRunner.class)
+/*@RunWith(SpringRunner.class)*/
 /*@Profile("test")*/
 @SpringBootTest(classes = LojaVirtualApplication.class)
 public class LojaVirtualApplicationTests extends TestCase {
