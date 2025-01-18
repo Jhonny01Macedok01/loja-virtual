@@ -52,7 +52,7 @@ public class Usuario implements UserDetails {
 	
 	
 	
-	@OneToMany(fetch = FetchType.LAZY) /*FetchType do tipo LAZY carrega os acessos direto do banco SOMENTE quando precisar*/
+	@OneToMany(fetch = FetchType.EAGER) /*FetchType do tipo LAZY carrega os acessos direto do banco SOMENTE quando precisar*/
 	@JoinTable(name = "usuarios_acesso",
 		uniqueConstraints = @UniqueConstraint (columnNames = {"usuario_id", "acesso_id"} ,
 		name = "unique_acesso_user"),
